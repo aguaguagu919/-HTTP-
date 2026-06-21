@@ -1,0 +1,16 @@
+{
+  "name": "web-collector",
+  "version": "1.0.0",
+  "description": "HTTP клиент и сервер для сбора информации из интернета по ключевым словам, с прогрессом загрузки через WebSocket и оффлайн-архивом в LocalStorage",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "keywords": ["http", "websocket", "express", "course-project"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "ws": "^8.21.0"
+  }
+}

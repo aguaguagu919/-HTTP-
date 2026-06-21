@@ -1,0 +1,32 @@
+{
+  "новости": [
+    "https://lenta.ru",
+    "https://ria.ru",
+    "https://tass.ru"
+  ],
+  "наука": [
+    "https://nplus1.ru",
+    "https://elementy.ru",
+    "https://ru.wikipedia.org/wiki/Наука"
+  ],
+  "программирование": [
+    "https://habr.com",
+    "https://developer.mozilla.org/ru/",
+    "https://ru.wikipedia.org/wiki/Программирование"
+  ],
+  "погода": [
+    "https://yandex.ru/pogoda",
+    "https://www.gismeteo.ru",
+    "https://meteoinfo.ru"
+  ],
+  "спорт": [
+    "https://www.sports.ru",
+    "https://www.championat.com",
+    "https://ru.wikipedia.org/wiki/Спорт"
+  ],
+  "космос": [
+    "https://www.roscosmos.ru",
+    "https://ru.wikipedia.org/wiki/Космос",
+    "https://nplus1.ru/news/tag/space"
+  ]
+}

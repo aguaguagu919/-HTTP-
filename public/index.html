@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Картотека — сбор контента из интернета</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <span class="masthead-mark">№</span>
+    <div class="masthead-text">
+      <h1>Картотека</h1>
+      <p class="masthead-sub">Архив веб-находок · клиент-сервер · оффлайн-чтение</p>
+    </div>
+    <div class="masthead-status" id="connectionStatus" aria-live="polite">
+      <span class="status-dot" id="statusDot"></span>
+      <span id="statusText">подключение…</span>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  
+  <section class="card" aria-labelledby="searchTitle">
+    <h2 id="searchTitle"><span class="card-index">01</span>Запрос</h2>
+    <p class="card-hint">Введите ключевое слово — сервер найдёт связанные источники.</p>
+
+    <form id="searchForm" class="search-form" autocomplete="off">
+      <input
+        type="text"
+        id="keywordInput"
+        name="keyword"
+        placeholder="например: космос"
+        aria-label="Ключевое слово"
+      >
+      <button type="submit" id="searchBtn">Найти</button>
+    </form>
+
+    <div id="keywordSuggestions" class="suggestions" aria-label="Доступные ключевые слова"></div>
+
+    <div id="searchError" class="message message-error" hidden></div>
+
+    <div id="urlListWrap" hidden>
+      <p class="card-hint">Источники по запросу «<span id="foundKeyword"></span>»:</p>
+      <ul id="urlList" class="url-list"></ul>
+    </div>
+  </section>
+
+  
+  <section class="card" aria-labelledby="downloadTitle">
+    <h2 id="downloadTitle"><span class="card-index">02</span>Загрузка</h2>
+
+    <div id="downloadEmpty" class="empty-state">
+      <p>Выберите источник слева — здесь появится статус загрузки.</p>
+    </div>
+
+    <div id="downloadActive" class="download-panel" hidden>
+      <p class="download-url" id="downloadUrl"></p>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div class="progress-meta">
+        <span id="progressPercent">0%</span>
+        <span id="progressBytes">0 КБ</span>
+      </div>
+
+      <p class="progress-status" id="progressStatus">ожидание…</p>
+    </div>
+
+    <div id="downloadError" class="message message-error" hidden></div>
+    <div id="downloadDone" class="message message-success" hidden></div>
+  </section>
+
+ 
+  <section class="card" aria-labelledby="archiveTitle">
+    <h2 id="archiveTitle"><span class="card-index">03</span>Архив</h2>
+    <p class="card-hint">Сохранено локально, доступно офлайн.</p>
+
+    <div id="archiveEmpty" class="empty-state">
+      <p>Пока пусто. Загруженные страницы появятся здесь.</p>
+    </div>
+
+    <ul id="archiveList" class="archive-list"></ul>
+  </section>
+
+</main>
+
+
+<section id="viewerSection" class="viewer" hidden aria-labelledby="viewerTitle">
+  <div class="viewer-inner">
+    <div class="viewer-head">
+      <div>
+        <p class="viewer-eyebrow">Карточка архива</p>
+        <h2 id="viewerTitle">—</h2>
+        <p class="viewer-meta" id="viewerMeta"></p>
+      </div>
+      <div class="viewer-actions">
+        <button id="viewerRaw" class="btn-secondary" type="button">Исходный код</button>
+        <button id="viewerDelete" class="btn-secondary btn-danger" type="button">Удалить</button>
+        <button id="viewerClose" class="btn-secondary" type="button">Закрыть ✕</button>
+      </div>
+    </div>
+    <div class="viewer-frame">
+      <iframe id="viewerFrame" title="Просмотр содержимого" sandbox=""></iframe>
+    </div>
+  </div>
+</section>
+
+<div id="toastRoot" class="toast-root" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
